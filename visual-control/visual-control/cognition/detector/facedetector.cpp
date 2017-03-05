@@ -124,7 +124,7 @@ namespace cognition
 			results, /*the the result vector, the output*/
 			1.13,  /*the the scale factor opencv uses to increase the window each pass, default 1.1*/
 			3,     /*minNeighbors, default: 3 (the min. number of rects to group together to call it a face)*/
-			cv::CascadeClassifier::DO_CANNY_PRUNING, 
+			CV_HAAR_DO_CANNY_PRUNING,
    				/*flags, Canny Prunning runs the canny edge detector to elimiate regions 
 				  which are unlikely to contain faces*/
 			cv::Size(55, 55) /*min rect check size, the minimum!*/

@@ -1,8 +1,8 @@
 #ifndef VISUALCONTROL_H
 #define VISUALCONTROL_H
 
-#include <QtGui/QMainWindow>
-
+#include <qt4/QtGui/qmainwindow.h>
+#include <logger.h>
 class VisualControl : public QMainWindow
 {
 	Q_OBJECT

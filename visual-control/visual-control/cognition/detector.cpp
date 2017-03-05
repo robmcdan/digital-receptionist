@@ -1,9 +1,9 @@
 #include "detector.h"
-#include "controller.h"
+#include "Controller.h"
 #include <boost/thread/locks.hpp>
 #include <algorithm>
 #include "framecapture.h"
-#include "controller.h"
+#include "Controller.h"
 
 namespace cognition
 {

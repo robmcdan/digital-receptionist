@@ -1,16 +1,16 @@
 #ifndef WEBCAMWIDGET_H
 #define WEBCAMWIDGET_H
 
-#include <QWidget>
+#include <qt4/QtGui/QWidget>
 //#include <boost/shared_ptr.hpp>
 //#include <boost/weak_ptr.hpp>
-#include "cognition/framereceiver.h"
-#include "cognition/controller.h"
+#include "../cognition/framereceiver.h"
+#include "../cognition/Controller.h"
 //#include "cognition/util.h"
 #include <boost/thread/mutex.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
-#include "cognition/detector.h"
-#include "cognition/detector/detailedfacedetector.h"
+#include "../cognition/detector.h"
+#include "../cognition/detector/detailedfacedetector.h"
 
 //forward declaration
 namespace cognition{class FrameCapture;}

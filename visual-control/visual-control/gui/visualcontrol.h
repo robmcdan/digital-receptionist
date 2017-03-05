@@ -1,15 +1,16 @@
 #ifndef VISUALCONTROL_H
 #define VISUALCONTROL_H
 
-#include <QtGui/QMainWindow>
-#include <highgui.h>
+#include <qt4/QtGui/qmainwindow.h>
+#include <opencv/highgui.h>
 #include <boost/shared_ptr.hpp>
 #include <boost/thread/thread.hpp>
-#include "cognition/framecapture.h"
-#include "cognition/detector/detailedfacedetector.h"
-#include "cognition/util.h"
-#include "cognition/recognizer/eigenfacerecognizer.h"
-
+#include "../cognition/framecapture.h"
+#include "../cognition/detector/detailedfacedetector.h"
+#include "../cognition/util.h"
+#include "../cognition/recognizer/eigenfacerecognizer.h"
+#include "../logger.h"
+#include <boost/filesystem.hpp>
 class QListWidget;
 class QPushButton;
 

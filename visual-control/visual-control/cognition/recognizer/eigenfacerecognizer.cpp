@@ -1,9 +1,9 @@
 #include "eigenfacerecognizer.h"
 
-#include <highgui.h>
-#include <cvaux.h>
-
+#include <opencv/cvaux.h>
+#include <opencv/cv.hpp>
 #include <limits>
+
 
 namespace cognition
 {

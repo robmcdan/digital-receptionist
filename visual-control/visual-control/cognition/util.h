@@ -5,12 +5,12 @@
 #include <algorithm>
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
-#include <cv.h>
+#include <opencv2/core/core.hpp>
 #include "framereceiver.h"
 
 #include <boost/enable_shared_from_this.hpp>
 #include "detector.h"
-#include "controller.h"
+#include "Controller.h"
 
 namespace cognition
 {

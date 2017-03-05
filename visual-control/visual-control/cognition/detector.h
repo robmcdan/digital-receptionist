@@ -3,7 +3,8 @@
 #include <string>
 #include <set>
 #include <vector>
-#include <cv.h>
+#include <opencv2/core/core.hpp>
+#include <opencv/highgui.h>
 
 //#include <boost/shared_ptr.hpp>
 #include <boost/thread/mutex.hpp>

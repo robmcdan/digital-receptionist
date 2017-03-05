@@ -1,7 +1,7 @@
 #ifndef COGNITION_TRAINERIMAGE_H
 #define COGNITION_TRAINERIMAGE_H
 
-#include<cv.h>
+#include<opencv2/core/core.hpp>
 #include<string>
 
 namespace cognition
@@ -10,7 +10,7 @@ namespace cognition
 	/*!
 	 * \brief Class used to prepare and store trainig images to be used in
 	 *		  recognizer classes. This class basically resizes the image and
-	 *		  transforms it´s color to grayscale. Input is assumed to be in
+	 *		  transforms itï¿½s color to grayscale. Input is assumed to be in
 	 *		  BGR format. (captured from cv::VideoCapture). 
 	 *
 	 * \author Christophe Hesters 31-1-2011

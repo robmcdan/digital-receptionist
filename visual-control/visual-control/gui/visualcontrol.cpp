@@ -2,19 +2,19 @@
 #include "webcamwidget.h"
 #include <boost/bind.hpp>
 #include <boost/filesystem.hpp>
+#include <qt4/QtGui/QWidget>
+//#include <qt4>
+#include <qt4/QtGui/QCloseEvent>
+#include <qt4/QtGui/QVBoxLayout>
+#include <qt4/QtGui/QHBoxLayout>
+#include <qt4/QtGui/QListWidget>
+#include <qt4/QtGui/QPushButton>
+#include <qt4/QtGui/QMessageBox>
+#include <qt4/QtGui/QInputDialog>
 
-#include <QDebug>
-#include <QCloseEvent>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QListWidget>
-#include <QPushButton>
-#include <QMessageBox>
-#include <QInputDialog>
-#include <logger.h>
 
-#include "cognition/detector/facedetector.h"
-#include "cognition/trainerimage.h"
+#include "../cognition/detector/facedetector.h"
+#include "../cognition/trainerimage.h"
 
 namespace gui
 {
@@ -167,8 +167,10 @@ namespace gui
 
 		for(directory_iterator file(dir); file != end; ++file)
 		{
-			if(is_regular_file(*file))
-				recognizer->addTrainingImage(file->path().string(), file->filename());
+			if(is_regular_file(*file)){
+				path fn = file->path().filename();
+				recognizer->addTrainingImage(file->path().string(), fn.string());
+			}
 		}
 
 		if(recognizer->train())

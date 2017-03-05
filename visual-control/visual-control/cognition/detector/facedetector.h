@@ -1,7 +1,11 @@
 #ifndef COGNITION_FACEDETECTOR_H
 #define COGNITION_FACEDETECTOR_H
 #include "../detector.h"
-
+#include<opencv/highgui.h>
+#include "opencv2/imgproc/imgproc.hpp"
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv/cv.hpp>
 #include <boost/thread/mutex.hpp>
 
 namespace cognition

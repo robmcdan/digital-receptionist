@@ -1,12 +1,12 @@
 #include "webcamwidget.h"
-#include <QImage>
-#include <QPainter>
-#include <QPen>
-#include <qdebug.h>
-#include <cv.h>
+#include <qt4/QtGui/QImage>
+#include <qt4/QtGui/QPainter>
+#include <qt4/QtGui/QPen>
+//#include <qt4/QDebug>
+#include <opencv2/core/core.hpp>
 #include <boost/thread/locks.hpp>
-#include "cognition/framecapture.h"
-#include "logger.h"
+#include "../cognition/framecapture.h"
+#include "../logger.h"
 
 namespace gui
 {

@@ -1,5 +1,5 @@
 #include "gui/visualcontrol.h"
-#include <QtGui/QApplication>
+#include <qt4/QtGui/qapplication.h>
 
 int main(int argc, char *argv[])
 {

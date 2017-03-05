@@ -4,11 +4,13 @@
 #include "framereceiver.h"
 
 //OpenCV video capture device
-#include <cv.h>
-#include <highgui.h>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/thread/mutex.hpp>
 #include <set>
+
+using namespace cv;
 
 namespace cognition
 {

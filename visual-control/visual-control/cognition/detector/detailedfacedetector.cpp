@@ -1,6 +1,7 @@
 #include "detailedfacedetector.h"
 #include <string>
 #include <cmath>
+#include <boost/thread/lock_guard.hpp>
 
 namespace cognition
 {
@@ -115,7 +116,7 @@ namespace cognition
 			eyeResults, /*the the result vector, the output*/
 			1.13,  /*the the scale factor opencv uses to increase the window each pass, default 1.1*/
 			3,     /*minNeighbors, default: 3 (the min. number of rects to group together to call it a face)*/
-			cv::CascadeClassifier::DO_CANNY_PRUNING, 
+			CV_HAAR_DO_CANNY_PRUNING,
    				/*flags, Canny Prunning runs the canny edge detector to elimiate regions 
 				  which are unlikely to contain faces*/
 			cv::Size(10,10) /*min rect check size, the minimum!*/
@@ -165,7 +166,7 @@ namespace cognition
 			noseResults, /*the the result vector, the output*/
 			1.13,  /*the the scale factor opencv uses to increase the window each pass, default 1.1*/
 			3,     /*minNeighbors, default: 3 (the min. number of rects to group together to call it a face)*/
-			cv::CascadeClassifier::DO_CANNY_PRUNING, 
+			CV_HAAR_DO_CANNY_PRUNING,
    				/*flags, Canny Prunning runs the canny edge detector to elimiate regions 
 				  which are unlikely to contain faces*/
 			cv::Size(10,10) /*min rect check size, the minimum!*/
@@ -211,7 +212,7 @@ namespace cognition
 			mouthResults, /*the the result vector, the output*/
 			1.13,  /*the the scale factor opencv uses to increase the window each pass, default 1.1*/
 			3,     /*minNeighbors, default: 3 (the min. number of rects to group together to call it a face)*/
-			cv::CascadeClassifier::DO_CANNY_PRUNING, 
+			CV_HAAR_DO_CANNY_PRUNING,
    				/*flags, Canny Prunning runs the canny edge detector to elimiate regions 
 				  which are unlikely to contain faces*/
 			cv::Size(20,10) /*min rect check size, the minimum!*/
