@@ -59,6 +59,7 @@ namespace cognition
 		for(int i = 0; i < numTrainedImages; i++)
 		{
 			//int offset = i * nEigens;
+
 			cvEigenDecomposite(
 				images[i],
 				numEigenvalues,

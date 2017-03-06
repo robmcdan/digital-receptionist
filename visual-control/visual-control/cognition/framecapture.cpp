@@ -1,6 +1,7 @@
 #include "framecapture.h"
 #include <boost/thread/locks.hpp>
 #include <boost/thread/thread.hpp>
+#include <boost/chrono/duration.hpp>
 #include <boost/bind.hpp>
 
 
@@ -49,7 +50,7 @@ namespace cognition
 			cv::flip( frame, frame, 1); //1 is flip horizontal
 			notifyReceivers(frame);
 			
-			boost::this_thread::interruptible_wait(framerateWaitMs);
+			boost::this_thread::sleep_for(boost::chrono::milliseconds(framerateWaitMs));
 		}
 	}
 

@@ -1,27 +1,29 @@
-#include "visualcontrol.h"
-#include "webcamwidget.h"
+#include "visualcontrol_gui.h"
+#include "webcamwidget_gui.h"
 #include <boost/bind.hpp>
 #include <boost/filesystem.hpp>
-#include <qt4/QtGui/QWidget>
+#include <QWidget>
 //#include <qt4>
-#include <qt4/QtGui/QCloseEvent>
-#include <qt4/QtGui/QVBoxLayout>
-#include <qt4/QtGui/QHBoxLayout>
-#include <qt4/QtGui/QListWidget>
-#include <qt4/QtGui/QPushButton>
-#include <qt4/QtGui/QMessageBox>
-#include <qt4/QtGui/QInputDialog>
+#include <qt5/QtGui/QCloseEvent>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QListWidget>
+#include <QPushButton>
+#include <QMessageBox>
+#include <QInputDialog>
 
 
 #include "../cognition/detector/facedetector.h"
 #include "../cognition/trainerimage.h"
+#include "../cognition/recognizer/fisherfacerecognizer.h"
+#include "../visualcontrol.h"
 
 namespace gui
 {
 
 	const cv::Size VisualControl::testImageSize(150,200);
 
-	VisualControl::VisualControl(QWidget *parent, Qt::WFlags flags)
+	VisualControl::VisualControl(QWidget *parent, Qt::WindowFlags flags)
 		: QMainWindow(parent, flags)
 	{
 		setupFramework();
@@ -46,7 +48,7 @@ namespace gui
 	{
 		using boost::shared_ptr;
 		using cognition::DetailedFaceDetector;
-		using cognition::EigenfaceRecognizer;
+		using cognition::FisherFaceRecognizer;
 
 		//videoCapture = shared_ptr<VideoCapture>( new VideoCapture(0) );
 		frameCapture = shared_ptr<cognition::FrameCapture>( new cognition::FrameCapture(32) );
@@ -63,7 +65,7 @@ namespace gui
 
 		frameCapture->addFrameReceiver(faceDetector.get());
 
-		recognizer = shared_ptr<EigenfaceRecognizer>( new cognition::EigenfaceRecognizer );
+		recognizer = shared_ptr<FisherFaceRecognizer>( new cognition::FisherFaceRecognizer );
 	}
 
 	void VisualControl::closeEvent(QCloseEvent *event)
@@ -224,3 +226,5 @@ namespace gui
 		//rects = detector.getAreas();
 	}
 }
+
+#include "moc_visualcontrol_gui.cpp"

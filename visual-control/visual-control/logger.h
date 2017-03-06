@@ -1,7 +1,7 @@
 #ifndef VC_LOGGER_H
 #define VC_LOGGER_H
 #include <string>
-
+#include <QWidget>
 class QListWidget;
 
 class Logger

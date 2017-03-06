@@ -1,5 +1,5 @@
 #include "logger.h"
-#include <qt4/QtGui/qlistwidget.h>
+#include <QListWidget>
 
 Logger Logger::instance;
 

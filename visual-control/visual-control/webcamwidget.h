@@ -1,7 +1,7 @@
 #ifndef WEBCAMWIDGET_H
 #define WEBCAMWIDGET_H
 
-#include <qt4/QtGui/qwidget.h>
+#include <QWidget>
 #include <boost/shared_ptr.hpp>
 #include "cognition/framecapture.h"
 #include "cognition/framereceiver.h"

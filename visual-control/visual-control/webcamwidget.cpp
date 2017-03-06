@@ -18,3 +18,6 @@ void WebcamWidget::receiveFrame(const cv::Mat &frame)
 	//add image to queue and return, so that captureDevice can continue work!
 	//other thread should show the images in the queue.
 }
+
+
+#include "moc_webcamwidget.cpp"

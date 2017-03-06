@@ -1,15 +1,15 @@
 #ifndef VISUALCONTROL_H
 #define VISUALCONTROL_H
 
-#include <qt4/QtGui/qmainwindow.h>
+#include <QMainWindow>
 #include <opencv/highgui.h>
 #include <boost/shared_ptr.hpp>
 #include <boost/thread/thread.hpp>
 #include "../cognition/framecapture.h"
 #include "../cognition/detector/detailedfacedetector.h"
 #include "../cognition/util.h"
-#include "../cognition/recognizer/eigenfacerecognizer.h"
 #include "../logger.h"
+#include "../cognition/recognizer/fisherfacerecognizer.h"
 #include <boost/filesystem.hpp>
 class QListWidget;
 class QPushButton;
@@ -27,7 +27,7 @@ namespace gui
 		Q_OBJECT
 
 	public:
-		VisualControl(QWidget *parent = 0, Qt::WFlags flags = 0);
+		VisualControl(QWidget *parent = 0, Qt::WindowFlags flags = 0);
 		~VisualControl();
 
 	public slots:
@@ -53,7 +53,7 @@ namespace gui
 		boost::shared_ptr<cv::VideoCapture> videoCapture;
 		boost::shared_ptr<cognition::FrameCapture> frameCapture;
 		boost::shared_ptr<cognition::DetailedFaceDetector> faceDetector;
-		boost::shared_ptr<cognition::EigenfaceRecognizer> recognizer;
+		boost::shared_ptr<cognition::FisherFaceRecognizer> recognizer;
 
 		void closeEvent(QCloseEvent *event);
 

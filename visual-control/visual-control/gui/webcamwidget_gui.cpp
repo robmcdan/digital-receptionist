@@ -1,8 +1,8 @@
-#include "webcamwidget.h"
-#include <qt4/QtGui/QImage>
-#include <qt4/QtGui/QPainter>
-#include <qt4/QtGui/QPen>
-//#include <qt4/QDebug>
+#include "webcamwidget_gui.h"
+#include <qt5/QtGui/QImage>
+#include <qt5/QtGui/QPainter>
+#include <qt5/QtGui/QPen>
+//#include <qt5/QDebug>
 #include <opencv2/core/core.hpp>
 #include <boost/thread/locks.hpp>
 #include "../cognition/framecapture.h"
@@ -168,3 +168,6 @@ namespace gui
 	}
 
 }
+
+
+#include "moc_webcamwidget_gui.cpp"
