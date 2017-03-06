@@ -22,13 +22,13 @@ namespace gui
 	 * 
 	 * \author Christophe hesters
 	 */
-	class VisualControl : public QMainWindow
+	class DigitalReceptionist : public QMainWindow
 	{
 		Q_OBJECT
 
 	public:
-		VisualControl(QWidget *parent = 0, Qt::WindowFlags flags = 0);
-		~VisualControl();
+		DigitalReceptionist(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+		~DigitalReceptionist();
 
 	public slots:
 		void captureTrainingImage();

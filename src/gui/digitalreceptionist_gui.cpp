@@ -1,4 +1,4 @@
-#include "visualcontrol_gui.h"
+#include "digitalreceptionist_gui.h"
 #include "webcamwidget_gui.h"
 #include <boost/bind.hpp>
 #include <boost/filesystem.hpp>
@@ -16,14 +16,14 @@
 #include "../cognition/detector/facedetector.h"
 #include "../cognition/trainerimage.h"
 #include "../cognition/recognizer/fisherfacerecognizer.h"
-#include "../visualcontrol.h"
+#include "digitalreceptionist.h"
 
 namespace gui
 {
 
-	const cv::Size VisualControl::testImageSize(150,200);
+	const cv::Size DigitalReceptionist::testImageSize(150,200);
 
-	VisualControl::VisualControl(QWidget *parent, Qt::WindowFlags flags)
+	DigitalReceptionist::DigitalReceptionist(QWidget *parent, Qt::WindowFlags flags)
 		: QMainWindow(parent, flags)
 	{
 		setupFramework();
@@ -40,11 +40,11 @@ namespace gui
 		Logger::getInstance().log("Ready...");
 	}
 
-	VisualControl::~VisualControl()
+	DigitalReceptionist::~DigitalReceptionist()
 	{
 	}
 
-	void VisualControl::setupFramework()
+	void DigitalReceptionist::setupFramework()
 	{
 		using boost::shared_ptr;
 		using cognition::DetailedFaceDetector;
@@ -68,7 +68,7 @@ namespace gui
 		recognizer = shared_ptr<FisherFaceRecognizer>( new cognition::FisherFaceRecognizer );
 	}
 
-	void VisualControl::closeEvent(QCloseEvent *event)
+	void DigitalReceptionist::closeEvent(QCloseEvent *event)
 	{
 		//webcamController->unregister();
 		faceDetector->removeController(webcamWidget);
@@ -93,7 +93,7 @@ namespace gui
 		//QMainWindow::closeEvent(event);
 	}
 
-	void VisualControl::setupGUI()
+	void DigitalReceptionist::setupGUI()
 	{
 		webcamWidget = new WebcamWidget(this, frameCapture.get());
 
@@ -129,7 +129,7 @@ namespace gui
 		setCentralWidget(centralWidget);
 	}
 
-	void VisualControl::captureTrainingImage()
+	void DigitalReceptionist::captureTrainingImage()
 	{
 		cv::Mat frame;
 		cognition::Detector::RectVector faces;
@@ -160,7 +160,7 @@ namespace gui
 		}
 	}
 
-	void VisualControl::trainRecognizer()
+	void DigitalReceptionist::trainRecognizer()
 	{
 		using namespace boost::filesystem;
 
@@ -181,7 +181,7 @@ namespace gui
 			QMessageBox::information(this, "Error", "The recognizer has indicated that it did not train correctly!");
 	}
 
-	void VisualControl::recognizeFaces()
+	void DigitalReceptionist::recognizeFaces()
 	{
 		if(recognizer->trained())
 		{
@@ -214,7 +214,7 @@ namespace gui
 		}
 	}
 
-	void VisualControl::captureFrameAndFaces(cognition::Detector::RectVector &rects, cv::Mat &frame)
+	void DigitalReceptionist::captureFrameAndFaces(cognition::Detector::RectVector &rects, cv::Mat &frame)
 	{
 		rects = webcamWidget->getCurrentFaces();
 		frame = webcamWidget->getCurrentFrame();
@@ -227,4 +227,4 @@ namespace gui
 	}
 }
 
-#include "moc_visualcontrol_gui.cpp"
+#include "moc_digitalreceptionist_gui.cpp"
