@@ -56,12 +56,12 @@ namespace gui
 		//update the path of the classifier to the local path of your openCV installation!
 		faceDetector = shared_ptr<DetailedFaceDetector>( 
 			new DetailedFaceDetector(DetailedFaceDetector::ALL, 
-			"C:/OpenCV2.1/data/haarcascades/haarcascade_frontalface_alt.xml",
+			"/home/rob/git/opencv/data/haarcascades/haarcascade_frontalface_alt.xml",
 			frameCapture.get(), false, 1.16));
 
-		faceDetector->loadCascade(DetailedFaceDetector::EYES, "C:/OpenCV2.1/data/haarcascades/haarcascade_eye.xml");
-		faceDetector->loadCascade(DetailedFaceDetector::NOSE, "C:/OpenCV2.1/data/haarcascades/haarcascade_mcs_nose.xml");
-		faceDetector->loadCascade(DetailedFaceDetector::MOUTH, "C:/OpenCV2.1/data/haarcascades/haarcascade_mcs_mouth.xml");
+		faceDetector->loadCascade(DetailedFaceDetector::EYES, "/home/rob/git/opencv/data/haarcascades/haarcascade_eye.xml");
+		faceDetector->loadCascade(DetailedFaceDetector::NOSE, "/home/rob/git/opencv/data/haarcascades/haarcascade_mcs_nose.xml");
+		faceDetector->loadCascade(DetailedFaceDetector::MOUTH, "/home/rob/git/opencv/data/haarcascades/haarcascade_mcs_mouth.xml");
 
 		frameCapture->addFrameReceiver(faceDetector.get());
 
@@ -218,7 +218,7 @@ namespace gui
 	{
 		rects = webcamWidget->getCurrentFaces();
 		frame = webcamWidget->getCurrentFrame();
-		//cognition::FaceDetector detector("C:/OpenCV2.1/data/haarcascades/haarcascade_frontalface_alt.xml");
+		//cognition::FaceDetector detector("/home/rob/git/opencv/data/haarcascades/haarcascade_frontalface_alt.xml");
 		//*frameCapture->getCaptureDevice() >> frame;
 
 		//detector.receiveFrame(frame);

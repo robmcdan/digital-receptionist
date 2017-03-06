@@ -15,7 +15,7 @@ namespace gui
 	WebcamWidget::WebcamWidget(QWidget *parent, FrameCapturePtr existingCaptureDevice)
 		: QWidget(parent)
 	{
-		if(existingCaptureDevice != 0)
+        if(existingCaptureDevice != 0)
 			existingCaptureDevice->addFrameReceiver(this);
 
 		previousTime = boost::posix_time::microsec_clock::local_time();

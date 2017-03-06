@@ -11,7 +11,11 @@ namespace cognition
 	FrameCapture::FrameCapture(float framerate)
 	{
 		captureDevice = new CaptureDevice(0);
-		setFramerate(framerate);
+
+        if(!captureDevice->isOpened())  // check if we succeeded
+            int x = 3;
+
+        setFramerate(framerate);
 	}
 
 	FrameCapture::FrameCapture(CaptureDevicePtr existingCaptureDevice, float framerate)

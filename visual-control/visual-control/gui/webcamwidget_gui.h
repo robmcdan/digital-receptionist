@@ -19,7 +19,7 @@ namespace gui
 {
 
 	/*! \brief	Widget that displays the webcam feed, provided by a capture devices
-	 *			it also draws the rectangles it recieves from detectors!
+	 *			it also draws the rectangles it receives from detectors!
 	 * 
 	 * \author Christophe hesters
 	 */
