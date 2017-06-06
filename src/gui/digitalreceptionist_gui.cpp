@@ -143,7 +143,7 @@ namespace gui
 		else 
 		{
 			frame = frame.clone();
-			cognition::TrainerImage convertor(testImageSize, true, "images/");
+			cognition::TrainerImage convertor(testImageSize, true, "/home/rob/git/digital-receptionist/src/images/");
 			cv::Mat faceRegion;
 			for(std::vector<cv::Rect>::iterator face = faces.begin(); face != faces.end(); ++face)
 			{
@@ -164,7 +164,7 @@ namespace gui
 	{
 		using namespace boost::filesystem;
 
-		path dir("images");
+		path dir("/home/rob/git/digital-receptionist/src/images/"); //todo add configuration member for directory
 		directory_iterator end;
 
 		for(directory_iterator file(dir); file != end; ++file)

@@ -2,9 +2,6 @@
 
 #include <opencv/cvaux.h>
 #include <opencv/cv.hpp>
-#include <limits>
-
-
 namespace cognition
 {
 
@@ -42,20 +39,16 @@ namespace cognition
         cvFree(images);
     }
 
-    bool FisherFaceRecognizer::train()
-    {
+    bool FisherFaceRecognizer::train() {
+        isTrained = false;
+
+
 
         isTrained = true;
 
         return isTrained;
     }
 
-
-    bool FisherFaceRecognizer::loadTrainingImages()
-    {
-
-        return true;
-    }
 
     void FisherFaceRecognizer::doPCA()
     {
